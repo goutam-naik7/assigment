@@ -1,23 +1,79 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import ResizablePanels from "resizable-panels-react";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <ResizablePanels
+        bkcolor="#e1b12c"
+        displayDirection="row"
+        width="100%"
+        height="800px"
+        panelsSize={[40, 60]}
+        sizeUnitMeasure="%"
+        resizerColor="#353b48"
+        resizerSize="10px"
+      >
+        <div
+          style={{
+            background: "#44bd32",
+            height: "100%",
+            width: "100%",
+            minWidth: "100px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <div
+            style={{ background: "#40739e", width: "80%", minWidth: "100px" }}
+          >
+            <h1>:D</h1>
+          </div>
+        </div>
+        <div
+          style={{
+            background: "#40739e",
+            height: "100%",
+            width: "100%",
+            minWidth: "100px",
+          }}
+        />
+      </ResizablePanels>
+      <br />
+      <ResizablePanels
+        bkcolor="#e1b12c"
+        displayDirection="column"
+        width="100%"
+        height="800px"
+        panelsSize={[40, 60]}
+        sizeUnitMeasure="%"
+        resizerColor="#dcdde1"
+        resizerSize="100px"
+      >
+        <div style={{ background: "#7f8fa6", height: "100%", width: "100%" }} />
+        <div
+          style={{
+            background: "#e84118",
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            overflow: "auto",
+            whiteSpace: "nowrap",
+            color: "white",
+          }}
+        >
+          <div>
+            <h1>
+              That's a big text, or maybe not. I guess i need a bigger text.
+              Perfect :D now you can scroll
+            </h1>
+          </div>
+        </div>
+      </ResizablePanels>
     </div>
   );
 }
